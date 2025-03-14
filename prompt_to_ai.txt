@@ -1,0 +1,23 @@
+这是几行有关PCI/PCIe设备的信息:
+---
+Serial bus controller [0c80]: Intel Corporation Comet Lake PCH SPI Controller [8086:06a4] Subsystem: CLEVO/KAPOK Computer Device [1558:8535]
+System peripheral: Intel Corporation Device 3442
+Host bridge [0600]: Intel Corporation 10th Gen Core Processor Host Bridge/DRAM Registers [8086:9b54] (rev 02) Subsystem: CLEVO/KAPOK Computer Device [1558:8535]
+PCI bridge: Intel Corporation Device 490f
+---
+
+其中包括的信息如下:
+1 (每行都一定会有) 设备类型(英文名) -- 如"Serial bus controller", "System peripheral", "Host bridge", "PCI bridge", 字符串
+2 (不一定每行都有) 设备类型(编号)   -- 如"[0c80]", "[0600]", 用方括号包裹的四位十六进制数字(大小写不敏感)
+3 (每行都一定会有) 冒号":"  -- 用以分隔"设备类型"和后续的"设备名称"
+4 (每行都一定会有) 设备名称 -- 如"Intel Corporation Comet Lake PCH SPI Controller", "Intel Corporation Device", "Intel Corporation 10th Gen Core Processor Host Bridge/DRAM Registers", "Intel Corporation Device"
+5 (每行都一定会有) 设备编号 -- 这部分有两种情况,一是如"[8086:06a4]","[8086:9b54]",用方括号包裹的两组四位十六进制数字,中间用冒号隔开,二是如"3442","490f"等没有被方括号包裹的一组四位十六进制数字(大小写不敏感)
+6 (不一定每行都有) 修订版本 -- 如"(rev 02)", "rev"后是两位十六进制数字
+7 (不一定每行都有) 子系统"Subsystem:"字样 -- 表示接下来的这一段是该设备所在的子系统, 字符串
+8 (不一定每行都有) 子系统名称 -- 如"CLEVO/KAPOK Computer Device"
+9 (不一定每行都有) 子系统编号 -- 如"[1558:8535]"用方括号包裹的两组四位十六进制数字,中间用冒号隔开.
+
+这样的信息一共有数百行,我希望利用Python对其进行整理.
+该段功能代码的开头是"for line in pci_devinfo_list:", "line"是如上文所述的一行设备信息字符串, pci_devinfo_list是这些字符串所在的列表.
+请按照上述每行中可能存在的9种信息类型,分字段将其保存为".csv"文件.表头是不包含空格的英文词组.
+可能出现不满足上述"每行都一定会有"的条件的文本行,将它们记录起来,统一保存在一个文本文档里

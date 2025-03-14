@@ -1,4 +1,4 @@
-﻿Time,Info_PCI
+Time,Info_PCI
 2024/11/19 18:54,"$ lspci -nnk
 00:00.0 Host bridge [0600]: Intel Corporation Device [8086:4e24]
         DeviceName: Onboard - Other
@@ -2378,7 +2378,7 @@ c3:00.6 USB controller [0c03]: Advanced Micro Devices, Inc. [AMD] Pink Sardine U
 02:01.0 PCI bridge [0604]: Advanced Micro Devices, Inc. [AMD] Device [1022:43ea]
         Subsystem: ASMedia Technology Inc. Device [1b21:3308]
         Kernel driver in use: pcieport"
-2024/11/19 18:55,"02:08，0 PCI bridge：Advanced Micro Devices, Inc,[AMD] Device 43ea"
+2024/11/19 18:55,"02:08.0 PCI bridge: Advanced Micro Devices, Inc,[AMD] Device 43ea"
 2024/11/19 18:31,"03:00.0 Non-Volatile memory controller [0108]: Intel Corporation Device [8086:f1aa] (rev 03)
 	Subsystem: Intel Corporation Device [8086:390f]
 	Kernel driver in use: nvme
@@ -2643,7 +2643,7 @@ ff:1e.6 System peripheral: Intel Corporation Device 345e (rev 06)
 ff:1e.7 System peripheral: Intel Corporation Device 345f (rev 06)
         Subsystem: Intel Corporation Device 0000
         Flags: fast devsel, NUMA node 1, IOMMU group 157"
-2025/2/20 18:35,"W7800
+2025/2/20 18:35,"
 e3:00.0 VGA compatible controller [0300]: Advanced Micro Devices, Inc. [AMD/ATI] Device [1002:7449]
         Subsystem: Gigabyte Technology Co., Ltd Device [1458:2428]
         Kernel driver in use: amdgpu
